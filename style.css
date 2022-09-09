@@ -6,7 +6,8 @@ html {
   color: rgb(255, 255, 255);
 }
 
-p {
+p 
+{
   text-decoration: none;
   text-align: center;
   color: rgb(255, 255, 255);
@@ -46,4 +47,16 @@ p {
   font-size: 20px;
   width: auto;
   border-left: 5px solid #33ADFF;
+}
+.imgs
+{
+  filter: grayscale(1);
+  height: 70px; 
+  transition: 0.5s;
+  margin: 5px;
+}
+.imgs:hover { 
+  filter: grayscale(0);
+  height: 80px;
+  margin: 3px;
 }
