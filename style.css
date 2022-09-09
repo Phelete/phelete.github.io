@@ -5,7 +5,6 @@ html {
   background: rgb(0, 0, 0) url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
   color: rgb(255, 255, 255);
 }
-
 p 
 {
   text-decoration: none;
@@ -35,7 +34,7 @@ p
 #navbar {
   height: 30px;
   background-color: rgb(0, 0, 0);
-  width: auto;
+  width: fit-content;
 }
 
 #navbar li a {
