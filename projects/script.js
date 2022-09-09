@@ -17,13 +17,20 @@ xhr.onreadystatechange = function() {
     for (var i in arr) {
         var nam = arr[i]["name"]
         var link = "https://github-readme-stats.vercel.app/api/pin/?username="+nick+"&repo="+nam+"&title_color=fff&icon_color=f9f9f9&text_color=9f9f9f&bg_color=151515"
-        var newDiv = document.createElement("img");
-        newDiv.setAttribute(
+        var repo_link = arr[i]["html_url"]
+        var img = document.createElement("img");
+        img.setAttribute(
           'src',
-          link,
+          link
         );
+        var newDiv = document.createElement("a");
+        newDiv.setAttribute(
+          'href',
+          repo_link
+        );
+        newDiv.appendChild(img)
         my_div = document.getElementById("org_div1");
-        document.body.insertBefore(newDiv, my_div);
+        document.body.append(newDiv)
     }
   }
 }
