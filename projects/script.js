@@ -1,5 +1,5 @@
 var xhr = new XMLHttpRequest()
-var nick = "ConterBox"
+var nick = "Phelete"
 xhr.open(
   'GET',
   'https://api.github.com/users/' + nick + '/repos',
