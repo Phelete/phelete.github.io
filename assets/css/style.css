@@ -1,0 +1,151 @@
+/* Define CSS variables for colors */
+:root {
+  --color-text: #333;
+  --color-background: #e6e6e6;
+  --color-background-dark: #1e1e1e;
+  --color-text-dark: #e0e0e0;
+  --color-link-hover: #3498db;
+  --color-theme-white-toggle-bg: #1e1f22;
+  --color-theme-black-toggle-bg: #f0f0f0;
+  --color-theme-toggle-icon: #fff;
+  --color-theme-toggle-sun: #000000;
+  --color-theme-toggle-moon: #90caf9;
+  --color-project-card-bg: #fff;
+  --color-project-card-bg-dark: #333;
+  --color-project-card-shadow: rgba(0, 0, 0, 0.10);
+}
+
+/* Основные стили */
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  color: var(--color-text);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-dark);
+}
+
+/* Стили для основного контента */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s, text-decoration-color 0.3s;
+}
+
+.project-card a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-hover);
+}
+
+.nav-link {
+  margin: 0 10px;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+}
+
+/* Переключатель темы в стиле ползунка */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 70px;
+  height: 35px;
+  background-color: var(--color-theme-white-toggle-bg);
+  border-radius: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s;
+  color: black; /* Default color for light theme */
+}
+
+body.dark #theme-toggle {
+  background-color: var(--color-theme-black-toggle-bg); /* Background color for dark theme */
+}
+
+body.dark #theme-toggle .toggle-icon {
+  transform: translateX(35px);
+}
+
+#theme-toggle .sun {
+  color: var(--color-theme-toggle-sun);
+  font-size: 18px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+#theme-toggle .moon {
+  color: var(--color-theme-toggle-moon);
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+body.dark #theme-toggle .sun {
+  opacity: 0;
+}
+
+body.dark #theme-toggle .moon {
+  opacity: 1;
+  transform: translateX(-5px); /* Adjust this value if needed */
+}
+
+/* Стили для страницы проектов */
+@media (min-width:768px)  { /* Для ширин экрана от 768px и выше */
+  #projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /
+  }
+}
+
+@media (min-width:1025px) { /* Для ширин экрана от 1025px и выше */
+  #projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+#projects {
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: var(--color-project-card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--color-project-card-shadow);
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+body.dark .project-card {
+  background-color: var(--color-project-card-bg-dark);
+  color: var(--color-text-dark);
+}
