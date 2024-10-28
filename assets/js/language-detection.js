@@ -3,4 +3,5 @@ function detectLanguage() {
 }
 let detectedLanguage = detectLanguage();
 let acceptedLanguages = ['cs', 'ru'];
-window.location.replace(acceptedLanguages.indexOf(detectedLanguage) > -1 ? detectedLanguage : 'en');
+let targetLanguage = acceptedLanguages.find(lang => detectedLanguage.startsWith(lang)) || 'en';
+window.location.replace(targetLanguage);

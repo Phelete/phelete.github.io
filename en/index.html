@@ -9,16 +9,24 @@
 </head>
 <body>
   <header>
-    <h1>Добро пожаловать!</h1>
-    <p>Познакомьтесь с моими проектами и опытом</p>
+    <h1>Welcome!</h1>
+    <p>Get to know my projects and experience</p>
     <nav>
-      <a href="../pages/about/en/" class="nav-link">Обо мне</a>
-      <a href="../pages/projects/en/" class="nav-link">Проекты</a>
+      <a href="../pages/about/en/" class="nav-link">About me</a>
+      <a href="../pages/projects/en/" class="nav-link">My projects</a>
+      <a href="../pages/projects/en/" class="nav-link">Education</a>
+      <a href="../pages/projects/en/" class="nav-link">Work experience</a>
     </nav>
   </header>
   <div id="theme-toggle" aria-label="Toggle theme">
     <div class="toggle-icon sun">☀️</div>
     <div class="toggle-icon moon">🌙</div>
   </div>
+  <div class="language-switcher">
+    <button onclick="setLanguage('cs')">CS</button>
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('ru')">RU</button>
+  </div>
+  <script src="../assets/js/language-switcher.js"></script>
 </body>
 </html>

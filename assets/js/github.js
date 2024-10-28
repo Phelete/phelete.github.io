@@ -8,7 +8,7 @@ async function loadProjects() {
   projectsContainer.innerHTML = projects.map(project => `
     <div class="project-card">
       <h3><a href="${project.html_url}" target="_blank">${project.name}</a></h3>
-      <p>${project.description || "Описание отсутствует"}</p>
+      <p>${project.description || "No description"}</p>
     </div>
   `).join('');
 }
