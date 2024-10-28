@@ -174,5 +174,5 @@ body.dark .language-switcher button {
 }
 
 .language-switcher button:hover {
-    background-color: #555;  /* Slightly lighter on hover */
+    background-color: var(--color-background-dark);  /* Slightly lighter on hover */
 }
