@@ -57,6 +57,13 @@ header {
   text-align: center;
 }
 
+.nav-link-underlined {
+  margin: 0 10px;
+  text-decoration: underline;
+  color: inherit;
+  text-align: center;
+}
+
 /* Переключатель темы в стиле ползунка */
 #theme-toggle {
   position: fixed;
