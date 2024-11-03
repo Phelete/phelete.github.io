@@ -175,6 +175,13 @@ body.dark .project-card {
     border-radius: 0.5rem;
 }
 
+.language-switcher button:active {
+    transform: scale(0.95); /* Уменьшение кнопки при нажатии */
+}
+/*TODO Beauty active language button*/
+.language-switcher button.picked {
+}
+
 body.dark .language-switcher button {
     background-color: var(--color-background);  /* Light background for dark mode */
     color: var(--color-background-dark);  /* White text color for contrast */

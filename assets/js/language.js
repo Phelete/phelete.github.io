@@ -3,8 +3,7 @@ const acceptLanguage = ['cs', 'ru', 'en'];
 function detectLanguage() {
     const userLang = navigator.language || navigator.userLanguage;
     let detectedLanguage = localStorage.getItem("language") || userLang;
-    let targetLanguage = acceptLanguage.find(lang => detectedLanguage.startsWith(lang)) || 'en';
-    return targetLanguage;
+    return acceptLanguage.find(lang => detectedLanguage.startsWith(lang)) || 'en';
 }
 
 function setLanguage(language) {
