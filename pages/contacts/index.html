@@ -1,6 +1,72 @@
-<script src="../../assets/js/language.js" defer></script>
-<script defer>
-    document.addEventListener("DOMContentLoaded", function() {
-        setLanguage();
-    });
-</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacts</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <script src="/assets/js/theme-toggle.js" defer></script>
+  <script src="/assets/js/github.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Let's Connect</h1>
+    <p>I'm always open to discussing new projects or opportunities.</p>
+
+    <nav>
+      <a href="/" class="nav-link">About me</a>
+      <a href="/pages/projects/" class="nav-link">My projects</a>
+      <a href="/pages/skills/" class="nav-link">Skills & Experience</a>
+      <a href="/pages/education/" class="nav-link">Education</a>
+      <a href="/pages/contacts/" class="nav-link-underlined">Contacts</a>
+    </nav>
+  </header>
+  <div id="theme-toggle" aria-label="Toggle theme">
+    <div class="toggle-icon sun">☀️</div>
+    <div class="toggle-icon moon">🌙</div>
+  </div>
+  <main>
+    <div class="content-section tg-section" style="padding: 2rem;">
+      <h2>Get in touch</h2>
+      <p style="margin-bottom: 2rem;">Whether you have a question, a project proposal, or just want to say hi, I'll try
+        my best to get back to you! Here are the best ways to reach me:</p>
+
+      <div class="contact-links" style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+        <a href="https://t.me/becenen" class="link tg-link" style="margin-top: 0; width: 100%; max-width: 300px;">
+          <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20"
+            style="margin-right:8px; vertical-align:middle;">
+            <path
+              d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.892-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+          </svg>
+          Telegram
+        </a>
+
+        <a href="https://github.com/phelete" class="link secondary-link"
+          style="margin-top: 0; width: 100%; max-width: 300px;">
+          <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20"
+            style="margin-right:8px; vertical-align:middle;">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z">
+            </path>
+          </svg>
+          GitHub
+        </a>
+
+        <a href="mailto:foxemaine@gmail.com" class="link secondary-link"
+          style="margin-top: 0; width: 100%; max-width: 300px;">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"
+            style="margin-right:8px; vertical-align:middle; stroke-linecap: round; stroke-linejoin: round;">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Email Me
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

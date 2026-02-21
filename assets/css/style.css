@@ -1,191 +1,357 @@
-:root {
-  --color-text: #333;
-  --color-background: #e6e6e6;
-  --color-background-dark: #1e1f22;
-  --color-text-dark: #e0e0e0;
-  --color-link-hover: #3498db;
-  --color-theme-toggle-icon: #fff;
-  --color-theme-toggle-sun: #000000;
-  --color-theme-toggle-moon: #90caf9;
-  --color-project-card-bg: #fff;
-  --color-project-card-bg-dark: #333;
-  --color-project-card-shadow: rgba(0, 0, 0, 0.10);
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Основные стили */
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  color: var(--color-text);
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: var(--color-background);
-  transition: background-color 0.3s, color 0.3s;
+:root {
+  /* Clean Light Theme */
+  --color-text: #1a1a1a;
+  --color-text-muted: #555555;
+  --color-background: #ffffff;
+  --color-background-alt: #f9f9f9;
+  --color-primary: #000000;
+  --color-secondary: #e0e0e0;
+  --color-accent: #2563eb;
+
+  --color-border: #eaeaea;
+  --color-btn-text: #ffffff;
+  --color-btn-bg: #1a1a1a;
+  --color-btn-hover: #333333;
+
+  --color-theme-toggle-bg: #f0f0f0;
+  --color-theme-toggle-border: #e0e0e0;
 }
 
 body.dark {
-  background-color: var(--color-background-dark);
-  color: var(--color-text-dark);
+  /* High Contrast Neutral Dark Theme */
+  --color-text: #f4f4f5;
+  --color-text-muted: #a1a1aa;
+  --color-background: #09090b;
+  --color-background-alt: #18181b;
+  --color-primary: #ffffff;
+  --color-secondary: #27272a;
+  --color-accent: #3b82f6;
+
+  --color-border: #3f3f46;
+  --color-btn-text: #09090b;
+  --color-btn-bg: #f4f4f5;
+  --color-btn-hover: #e4e4e7;
+
+  --color-theme-toggle-bg: #18181b;
+  --color-theme-toggle-border: #3f3f46;
 }
 
-/* Стили для основного контента */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.2s, color 0.2s;
+  /* Minimal transition just for dark mode */
+}
+
+/* Header & Typography */
 header {
-  text-align: center;
-  margin-bottom: 20px;
+  width: 100%;
+  max-width: 800px;
+  padding: 4rem 2rem 2rem;
+  text-align: left;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+header p,
+.project-card p {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+
+.nav-link,
+.nav-link-underlined {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.nav-link-underlined {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 2px;
+}
+
+/* Theme Toggle (Minimal Button) */
+#theme-toggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-theme-toggle-bg);
+  border: 1px solid var(--color-theme-toggle-border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-icon {
+  font-size: 1.2rem;
+}
+
+.sun,
+.moon {
+  display: none;
+}
+
+body:not(.dark) .moon {
+  display: block;
+  color: #1a1a1a;
+}
+
+body.dark .sun {
+  display: block;
+  color: #ededed;
+}
+
+/* Main Content Area */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+/* Cards & Content Sections */
+.content-section {
+  background-color: var(--color-background-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: left;
+}
+
+.project-card {
+  background-color: var(--color-background-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: left;
 }
 
 .project-card a {
   text-decoration: none;
-  color: inherit;
-  transition: color 0.3s, text-decoration-color 0.3s;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
 }
 
 .project-card a:hover {
-  color: var(--color-link-hover);
   text-decoration: underline;
-  text-decoration-color: var(--color-link-hover);
 }
 
-.nav-link {
-  margin: 0 10px;
+/* Buttons (Telegram, View Projects) */
+.link {
+  display: inline-block;
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  font-weight: 500;
   text-decoration: none;
-  color: inherit;
+  margin-top: 2rem;
   text-align: center;
 }
 
-.nav-link-underlined {
-  margin: 0 10px;
-  text-decoration: underline;
-  color: inherit;
-  text-align: center;
+.link:hover {
+  background-color: var(--color-btn-hover);
 }
 
-/* Переключатель темы в стиле ползунка */
-#theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 70px;
-  height: 35px;
-  background-color: var(--color-background-dark);
-  border-radius: 18px;
-  cursor: pointer;
-  display: flex;
+/* Telegram Specific Button Styles */
+.tg-section {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.tg-link {
+  background-color: #2AABEE;
+  /* Telegram Blue */
+  color: #ffffff;
+  font-size: 1.125rem;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s, color 0.3s;
-  color: black; /* Default color for light theme */
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(42, 171, 238, 0.2);
 }
 
-body.dark #theme-toggle {
-  background-color: var(--color-background); /* Background color for dark theme */
+.tg-link:hover {
+  background-color: #229ED9;
+  color: #ffffff;
 }
 
-body.dark #theme-toggle .toggle-icon {
-  transform: translateX(35px);
+.secondary-link {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s;
 }
 
-#theme-toggle .sun {
-  color: var(--color-theme-toggle-sun);
-  font-size: 18px;
-  opacity: 1;
-  transition: opacity 0.3s;
+.secondary-link:hover {
+  background-color: var(--color-border);
+  color: var(--color-primary);
 }
 
-#theme-toggle .moon {
-  color: var(--color-theme-toggle-moon);
-  font-size: 18px;
-  opacity: 0;
-  transition: opacity 0.3s;
+/* Skills Layout & Pills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: start;
 }
 
-body.dark #theme-toggle .sun {
-  opacity: 0;
+.skills-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-body.dark #theme-toggle .moon {
-  opacity: 1;
-  transform: translateX(-5px); /* Adjust this value if needed */
+.skill-category {
+  display: block;
+  width: 100%;
 }
 
-/* Стили для страницы проектов */
-@media (min-width:768px)  { /* Для ширин экрана от 768px и выше */
-  #projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /
-  }
+.skill-category h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
 }
 
-@media (min-width:1025px) { /* Для ширин экрана от 1025px и выше */
-  #projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  }
+.skill-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-list li {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 #projects {
-  gap: 20px;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
-.project-card {
-  background-color: var(--color-project-card-bg);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px var(--color-project-card-shadow);
-  width: 250px;
-  text-align: center;
-  transition: transform 0.3s;
+/* Experience Layout */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
+.experience-item {
+  border-left: 2px solid var(--color-border);
+  padding-left: 1.5rem;
+  position: relative;
 }
 
-body.dark .project-card {
-  background-color: var(--color-project-card-bg-dark);
-  color: var(--color-text-dark);
+.experience-item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
 }
 
-.language-switcher {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    display: flex;
-    gap: 0.5rem;
+.experience-item h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--color-text);
 }
 
-
-.language-switcher button {
-    background-color: var(--color-background-dark);  /* Dark background to match minimal style */
-    color: var(--color-background);  /* White text color for contrast */
-    border: none;
-    padding: 0.5rem 1rem;
-    margin: 0 0.25rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 0.5rem;
+.experience-date {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
-.language-switcher button:active {
-    transform: scale(0.95); /* Уменьшение кнопки при нажатии */
-}
-/*TODO Beauty active language button*/
-.language-switcher button.picked {
-}
-
-body.dark .language-switcher button {
-    background-color: var(--color-background);  /* Light background for dark mode */
-    color: var(--color-background-dark);  /* White text color for contrast */
+.experience-desc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
 }
 
-.language-switcher button:hover {
-    background-color: var(--color-background-dark);  /* Slightly lighter on hover */
+/* Responsive */
+@media (max-width: 600px) {
+  header {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
 }

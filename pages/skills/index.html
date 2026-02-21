@@ -1,6 +1,106 @@
-<script src="../../assets/js/language.js" defer></script>
-<script defer>
-    document.addEventListener("DOMContentLoaded", function() {
-        setLanguage();
-    });
-</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <script src="/assets/js/theme-toggle.js" defer></script>
+  <script src="/assets/js/github.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Skills & Experience</h1>
+    <p>My technical stack and professional background.</p>
+    <nav>
+      <a href="/" class="nav-link">About me</a>
+      <a href="/pages/projects/" class="nav-link">My projects</a>
+      <a href="/pages/skills/" class="nav-link-underlined">Skills & Experience</a>
+      <a href="/pages/education/" class="nav-link">Education</a>
+      <a href="/pages/contacts/" class="nav-link">Contacts</a>
+    </nav>
+  </header>
+  <div id="theme-toggle" aria-label="Toggle theme">
+    <div class="toggle-icon sun">☀️</div>
+    <div class="toggle-icon moon">🌙</div>
+  </div>
+  <main>
+    <div class="content-section">
+      <h2>Skills</h2>
+      <p style="margin-bottom: 2rem;">Here are some of the technologies and tools I work with.</p>
+
+      <div class="skills-grid">
+        <div class="skills-col">
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <ul class="skill-list">
+              <li>Python</li>
+              <li>C++</li>
+              <li>C</li>
+              <li>C#</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>DevOps & Infrastructure</h3>
+            <ul class="skill-list">
+              <li>Linux</li>
+              <li>Docker & Docker Compose</li>
+              <li>GitHub Actions (CI/CD)</li>
+              <li>Home Server Setup & Management</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Tools & Workflow</h3>
+            <ul class="skill-list">
+              <li>Git</li>
+              <li>Unix Terminal / Shell</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skills-col">
+          <div class="skill-category">
+            <h3>Backend Development</h3>
+            <ul class="skill-list">
+              <li>FastAPI</li>
+              <li>Aiogram</li>
+              <li>Microservices Architecture</li>
+              <li>REST API Design</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Testing Frameworks</h3>
+            <ul class="skill-list">
+              <li>Pytest</li>
+              <li>Google Test</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" style="margin-top: 2rem;">
+      <h2>Experience</h2>
+      <div class="experience-list">
+        <div class="experience-item">
+          <h3>RESTful API Development (FastAPI)</h3>
+          <p class="experience-date">January 2023 &ndash; May 2023</p>
+          <p class="experience-desc">Designed and implemented efficient RESTful APIs using the FastAPI framework.</p>
+        </div>
+        <div class="experience-item">
+          <h3>Telegram Bot Development (Aiogram)</h3>
+          <p class="experience-date">October 2021 &ndash; June 2023</p>
+          <p class="experience-desc">Developed and maintained various Telegram bots utilizing the Aiogram framework.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

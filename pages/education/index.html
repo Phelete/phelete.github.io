@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <script src="/assets/js/theme-toggle.js" defer></script>
+    <script src="/assets/js/github.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Education</h1>
+        <p>My academic background and qualifications.</p>
+        <nav>
+            <a href="/" class="nav-link">About me</a>
+            <a href="/pages/projects/" class="nav-link">My projects</a>
+            <a href="/pages/skills/" class="nav-link">Skills & Experience</a>
+            <a href="/pages/education/" class="nav-link-underlined">Education</a>
+            <a href="/pages/contacts/" class="nav-link">Contacts</a>
+        </nav>
+    </header>
+    <div id="theme-toggle" aria-label="Toggle theme">
+        <div class="toggle-icon sun">☀️</div>
+        <div class="toggle-icon moon">🌙</div>
+    </div>
+    <main>
+        <div class="content-section">
+            <h2>My Education</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <h3>VUT FIT (Brno University of Technology)</h3>
+                    <p class="experience-date">September 2024 &ndash; Present</p>
+                    <p class="experience-desc">Currently studying in my <strong id="course-year">1st year</strong> at
+                        the Faculty of Information Technology.</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function calculateCourse() {
+                const element = document.getElementById('course-year');
+                if (!element) return;
+
+                // Set the year you started studying at VUT FIT here
+                const startYear = 2024;
+                const now = new Date();
+                const currentYear = now.getFullYear();
+                const currentMonth = now.getMonth(); // 0 is Jan, 8 is Sept
+
+                // If it's before September, the academic year started last year
+                let academicYear = currentYear;
+                if (currentMonth < 8) {
+                    academicYear = currentYear - 1;
+                }
+
+                let course = academicYear - startYear + 1;
+                if (course < 1) course = 1;
+
+                // Suffix logic for English numbers
+                let suffix = "th";
+                if (course === 1) suffix = "st";
+                else if (course === 2) suffix = "nd";
+                else if (course === 3) suffix = "rd";
+
+                element.innerHTML = `${course}<sup>${suffix}</sup> year`;
+            }
+
+            // Run immediately when script is parsed
+            calculateCourse();
+
+            // Re-run safely on SPA transitions
+            window.addEventListener("spa-navigate", calculateCourse);
+        </script>
+    </main>
+</body>
+
+</html>
